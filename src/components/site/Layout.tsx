@@ -10,11 +10,19 @@ const NAV = [
   { to: "/about", label: "About" },
 ] as const;
 
-function Logo({ light = false }: { light?: boolean }) {
+function Logo({ light = false, large = false }: { light?: boolean; large?: boolean }) {
   return (
     <Link to="/" className="flex items-center gap-2.5" aria-label="Nedd Digital home">
-      <img src={logo.url} alt="" width={40} height={40} className="h-9 w-9 rounded-sm bg-card object-contain p-0.5" />
-      <span className={`font-sans text-base font-semibold ${light ? "text-on-navy" : "text-navy"}`}>Nedd Digital</span>
+      <img
+        src={logo.url}
+        alt=""
+        width={48}
+        height={48}
+        className={`${large ? "h-12 w-12" : "h-9 w-9"} rounded-sm bg-card object-contain p-0.5`}
+      />
+      <span className={`font-sans text-base font-semibold ${light ? "text-on-navy" : "text-navy"}`}>
+        Nedd Digital
+      </span>
     </Link>
   );
 }
@@ -58,7 +66,7 @@ export function Header() {
       className={`sticky top-0 z-50 border-b transition-colors ${scrolled ? "border-border bg-background/90 backdrop-blur" : "border-transparent bg-background"}`}
     >
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 py-3 lg:px-8">
-        <Logo />
+        <Logo large />
         <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
           <Link to="/" className="rounded-md px-3 py-2 text-sm font-medium hover:bg-muted" activeOptions={{ exact: true }} activeProps={{ className: "text-navy-soft" }}>
             Home
