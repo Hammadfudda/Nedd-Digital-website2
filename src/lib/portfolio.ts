@@ -121,8 +121,8 @@ const NAMES: Record<PortfolioCategory, string[]> = {
     "Racheal Piltman",
     "Elev8 Construct Ltd",
     "Juanitas Photobooth",
-    "Izaac Promos",
     "SAF Consultant",
+    "Izaac Promos",
   ],
 };
 
