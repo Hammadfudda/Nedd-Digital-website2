@@ -5,7 +5,7 @@ const analyticsDashboard = { url: "/images/data-analysis-dashboard.png" };
 const leaveDashboard = { url: "/images/leave-management-demo.jpg" };
 import { Reveal } from "@/components/site/Reveal";
 import { LEAVE_FEATURES, SERVICES } from "@/lib/site";
-import { CATEGORY_LABEL, PORTFOLIO } from "@/lib/portfolio";
+import { CATEGORY_LABEL, Our Work } from "@/lib/portfolio";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -127,12 +127,12 @@ function Index() {
       <section className="bg-navy py-20 text-on-navy lg:py-28">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-12 lg:px-8">
           <div className="lg:col-span-5"><Eyebrow light>Our product</Eyebrow><h2 className="text-5xl font-normal leading-none md:text-6xl">Leave Management Software</h2><p className="mt-6 leading-7 text-on-navy-muted">We built it because we needed it ourselves. Employees ask for time off, managers approve it, and everyone sees real leave balances without a spreadsheet being passed around by email.</p><div className="mt-8"><PrimaryLink to="/products/leave-management">View the product</PrimaryLink></div></div>
-          <div className="lg:col-span-7"><Link to="/portfolio" search={{ item: "leave-management-dashboard" }} aria-label="View leave management dashboard in portfolio" className="block overflow-hidden border-8 border-on-navy/10 bg-card"><img src={leaveDashboard.url} alt="Nedd Digital Leave Management Software admin dashboard" className="w-full" /></Link><ul className="mt-6 grid gap-3 sm:grid-cols-2">{LEAVE_FEATURES.slice(0, 6).map((feature) => <li key={feature.title} className="flex gap-2 text-sm text-on-navy-muted"><Check className="h-4 w-4 shrink-0 text-accent" />{feature.title}</li>)}</ul></div>
+          <div className="lg:col-span-7"><Link to="/portfolio" search={{ item: "leave-management-dashboard" }} aria-label="View leave management dashboard in Our Work" className="block overflow-hidden border-8 border-on-navy/10 bg-card"><img src={leaveDashboard.url} alt="Nedd Digital Leave Management Software admin dashboard" className="w-full" /></Link><ul className="mt-6 grid gap-3 sm:grid-cols-2">{LEAVE_FEATURES.slice(0, 6).map((feature) => <li key={feature.title} className="flex gap-2 text-sm text-on-navy-muted"><Check className="h-4 w-4 shrink-0 text-accent" />{feature.title}</li>)}</ul></div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
-        <div className="flex flex-wrap items-end justify-between gap-4"><div><Eyebrow>Portfolio</Eyebrow><h2 className="text-5xl font-normal text-navy md:text-6xl">Recent work</h2></div><GhostLink to="/portfolio" light={false}>View full portfolio</GhostLink></div>
+      <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">Our Work
+        <div className="flex flex-wrap items-end justify-between gap-4"><div><Eyebrow>Portfolio</Eyebrow><h2 className="text-5xl font-normal text-navy md:text-6xl">Recent work</h2></div><GhostLink to="/portfolio" light={false}>View all work </GhostLink></div>
         <div className="mt-12 grid auto-rows-[220px] gap-4 sm:grid-cols-2 lg:grid-cols-12">
           {PREVIEW.map((item, index) => (
             <Link key={item.id} to="/portfolio" search={{ item: item.id }} className={`group relative overflow-hidden bg-muted ${index === 0 ? "sm:row-span-2 lg:col-span-7" : "lg:col-span-5"}`}>

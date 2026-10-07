@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+  import { createFileRoute } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import { useState } from "react";
 import { PageHero, CtaBand, Eyebrow, PrimaryLink } from "@/components/site/Blocks";
@@ -12,9 +12,9 @@ const DESC = "Explore Nedd Digital websites, mobile apps, brand identities, data
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio | Dashboards, Websites & Software | Nedd Digital" },
+      { title: "Our Work | Dashboards, Websites & Software | Nedd Digital" },
       { name: "description", content: DESC },
-      { property: "og:title", content: "Portfolio | Dashboards, Websites & Software | Nedd Digital" },
+      { property: "og:title", content: "Our Work | Dashboards, Websites & Software | Nedd Digital" },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -33,7 +33,7 @@ function Page() {
   return (
     <>
       <PageHero
-        eyebrow="Portfolio"
+        eyebrow="Our Work"
         title="Work that shows what we build."
         lead="Explore selected websites, mobile applications, brand identities, data analysis dashboards and our Leave Management Software."
       />

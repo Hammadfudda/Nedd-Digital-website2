@@ -6,7 +6,7 @@ import { CONTACT, SERVICES } from "@/lib/site";
 
 const NAV = [
   { to: "/products/leave-management", label: "Products" },
-  { to: "/portfolio", label: "Portfolio" },
+  { to: "/portfolio", label: "Our Work" },
   { to: "/about", label: "About" },
 ] as const;
 
@@ -158,7 +158,7 @@ export function Footer() {
             <p className="flex gap-2"><MapPin className="h-4 w-4 shrink-0" />{CONTACT.address}</p>
           </address>
           <nav aria-label="Footer" className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-sm">
-            <Link to="/portfolio" className="hover:text-accent">Portfolio</Link>
+            <Link to="/portfolio" className="hover:text-accent">Our Work</Link>
             <Link to="/about" className="hover:text-accent">About</Link>
             <Link to="/contact" className="hover:text-accent">Contact</Link>
           </nav>
