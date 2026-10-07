@@ -5,7 +5,7 @@ const analyticsDashboard = { url: "/images/data-analysis-dashboard.png" };
 const leaveDashboard = { url: "/images/leave-management-demo.jpg" };
 import { Reveal } from "@/components/site/Reveal";
 import { LEAVE_FEATURES, SERVICES } from "@/lib/site";
-import { CATEGORY_LABEL, Our Work } from "@/lib/portfolio";
+import { CATEGORY_LABEL, PORTFOLIO } from "@/lib/portfolio";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -121,7 +121,7 @@ function Index() {
 
       <section className="mx-auto grid max-w-7xl items-center gap-14 px-5 py-20 lg:grid-cols-12 lg:px-8 lg:py-28">
         <div className="lg:col-span-5"><Eyebrow>Power BI</Eyebrow><h2 className="text-5xl font-normal leading-none text-navy md:text-6xl">Your numbers, at a glance.</h2><p className="mt-6 leading-7 text-muted-foreground">Most owners can tell you last month's sales. Fewer can say which three customers carry the business, or how long cash would last in a slow month. A proper dashboard answers both. Every bookkeeping package includes a free historical Power BI dashboard covering up to three years of your data, so you see the full picture from day one.</p><div className="mt-8"><PrimaryLink to="/services/$slug" params={{ slug: "power-bi-data-analytics" }}>See dashboards</PrimaryLink></div></div>
-        <div className="lg:col-span-7"><Link to="/portfolio" search={{ item: "data-analysis-dashboard" }} aria-label="View data analysis dashboard in portfolio"><img src={analyticsDashboard.url} alt="Product sales and market share data analysis dashboard" loading="lazy" className="w-full rounded-sm border" /></Link></div>
+        <div className="lg:col-span-7"><Link to="/portfolio" search={{ item: "data-analysis-dashboard" }} aria-label="View data analysis dashboard in our work"><img src={analyticsDashboard.url} alt="Product sales and market share data analysis dashboard" loading="lazy" className="w-full rounded-sm border" /></Link></div>
       </section>
 
       <section className="bg-navy py-20 text-on-navy lg:py-28">
@@ -131,8 +131,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">Our Work
-        <div className="flex flex-wrap items-end justify-between gap-4"><div><Eyebrow>Portfolio</Eyebrow><h2 className="text-5xl font-normal text-navy md:text-6xl">Recent work</h2></div><GhostLink to="/portfolio" light={false}>View all work </GhostLink></div>
+<section className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">        <div className="flex flex-wrap items-end justify-between gap-4"><div><Eyebrow>Our Work</Eyebrow><h2 className="text-5xl font-normal text-navy md:text-6xl">Recent work</h2></div><GhostLink to="/portfolio" light={false}>View all work </GhostLink></div>
         <div className="mt-12 grid auto-rows-[220px] gap-4 sm:grid-cols-2 lg:grid-cols-12">
           {PREVIEW.map((item, index) => (
             <Link key={item.id} to="/portfolio" search={{ item: item.id }} className={`group relative overflow-hidden bg-muted ${index === 0 ? "sm:row-span-2 lg:col-span-7" : "lg:col-span-5"}`}>
