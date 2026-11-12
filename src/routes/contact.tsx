@@ -87,10 +87,10 @@ function Page() {
           <Eyebrow>Get in touch</Eyebrow>
           <h2 className="text-2xl font-semibold text-navy">Nedd Digital</h2>
           <address className="mt-6 space-y-4 not-italic">
-            <a href={CONTACT.phoneHref} className="flex items-center gap-4 rounded-2xl border bg-card p-5 transition-colors hover:border-navy-soft">
+            <a href={CONTACT.phoneHref} className="flex items-center gap-4 rounded-2xl border bg-card p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-navy-soft hover:shadow-elegant">
               <Phone className="h-5 w-5 text-navy-soft" /><span><span className="block text-xs text-muted-foreground">Phone</span><span className="font-semibold text-navy">{CONTACT.phone}</span></span>
             </a>
-            <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-4 rounded-2xl border bg-card p-5 transition-colors hover:border-navy-soft">
+            <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-4 rounded-2xl border bg-card p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-navy-soft hover:shadow-elegant">
               <Mail className="h-5 w-5 text-navy-soft" /><span><span className="block text-xs text-muted-foreground">Email</span><span className="font-semibold text-navy">{CONTACT.email}</span></span>
             </a>
             <div className="flex items-center gap-4 rounded-2xl border bg-card p-5">
@@ -99,7 +99,7 @@ function Page() {
           </address>
         </aside>
 
-        <form onSubmit={submit} noValidate className="rounded-3xl border bg-card p-6 md:p-10 lg:col-span-3">
+        <form onSubmit={submit} noValidate className="rounded-3xl border bg-card p-6 shadow-elegant md:p-10 lg:col-span-3">
           <div className="grid gap-5 sm:grid-cols-2">
             <div>
               <label htmlFor="name" className="text-sm font-semibold text-navy">Name <span aria-hidden className="text-destructive">*</span></label>
@@ -129,7 +129,7 @@ function Page() {
               {err("message")}
             </div>
           </div>
-          <button type="submit" disabled={sending} className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 font-semibold text-accent-foreground transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <button type="submit" disabled={sending} className="mt-6 inline-flex items-center gap-2 rounded-full bg-navy px-7 py-3.5 font-semibold text-primary-foreground shadow-glow transition-all duration-300 hover:-translate-y-0.5 hover:bg-violet focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
             {sending ? "Sending…" : "Let's discuss your project"} <Send className="h-4 w-4" />
           </button>
           <p role="status" className="mt-4 text-sm text-muted-foreground">

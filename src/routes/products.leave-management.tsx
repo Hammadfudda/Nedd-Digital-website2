@@ -22,10 +22,10 @@ function Page() {
     <>
       <PageHero eyebrow="Product" title="Leave Management Software" lead="We built this because we needed it ourselves and couldn't find anything that didn't feel bloated. Employees submit requests, managers approve or decline them with a clear trail behind every decision, and the leave balance updates the moment a request is approved, so nobody is working off a number that's already out of date." />
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
-        <img src={leaveDashboard.url} alt="Nedd Digital Leave Management Software admin dashboard" className="mb-12 w-full rounded-sm border" />
+        <img src={leaveDashboard.url} alt="Nedd Digital Leave Management Software admin dashboard" className="mb-12 w-full rounded-2xl border shadow-elegant" />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {LEAVE_FEATURES.map((f) => (
-            <div key={f.title} className="rounded-2xl border bg-card p-6">
+            <div key={f.title} className="rounded-2xl border bg-card p-6 transition-all duration-500 hover:-translate-y-1 hover:border-lavender hover:shadow-elegant">
               <h3 className="font-semibold text-navy">{f.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{f.body}</p>
             </div>

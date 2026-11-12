@@ -13,16 +13,8 @@ const NAV = [
 function Logo({ light = false, large = false }: { light?: boolean; large?: boolean }) {
   return (
     <Link to="/" className="flex items-center gap-2.5" aria-label="Nedd Digital home">
-      <img
-        src={logo.url}
-        alt=""
-        width={48}
-        height={48}
-        className={`${large ? "h-12 w-12" : "h-9 w-9"} rounded-sm bg-card object-contain p-0.5`}
-      />
-      <span className={`font-sans text-base font-semibold ${light ? "text-on-navy" : "text-navy"}`}>
-        Nedd Digital
-      </span>
+      <img src={logo.url} alt="" width={48} height={48} className={`${large ? "h-12 w-12" : "h-9 w-9"} rounded-full bg-card object-contain p-0.5 ring-1 ring-border`} />
+      <span className={`font-display text-lg font-semibold tracking-tight ${light ? "text-on-navy" : "text-navy"}`}>Nedd Digital</span>
     </Link>
   );
 }
@@ -36,7 +28,7 @@ function ServiceList({ onNavigate }: { onNavigate?: () => void }) {
               to="/services/$slug"
               params={{ slug: s.slug }}
               onClick={onNavigate}
-              className="block rounded-md px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+              className="block rounded-xl px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary hover:text-navy-soft"
             >
               {s.name}
             </Link>
@@ -63,12 +55,12 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b transition-colors ${scrolled ? "border-border bg-background/90 backdrop-blur" : "border-transparent bg-background"}`}
+      className={`sticky top-0 z-50 border-b transition-all duration-300 ${scrolled ? "border-border/70 bg-background/80 shadow-elegant backdrop-blur-xl" : "border-transparent bg-background"}`}
     >
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 py-3 lg:px-8">
         <Logo large />
         <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
-          <Link to="/" className="rounded-md px-3 py-2 text-sm font-medium hover:bg-muted" activeOptions={{ exact: true }} activeProps={{ className: "text-navy-soft" }}>
+          <Link to="/" className="rounded-full px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary hover:text-navy-soft" activeOptions={{ exact: true }} activeProps={{ className: "text-navy-soft" }}>
             Home
           </Link>
           <div className="relative" onMouseLeave={() => setMenu(false)}>
@@ -78,15 +70,15 @@ export function Header() {
               aria-haspopup="true"
               onClick={() => setMenu((v) => !v)}
               onMouseEnter={() => setMenu(true)}
-              className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium hover:bg-muted"
+              className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary hover:text-navy-soft"
             >
               Services <ChevronDown className={`h-4 w-4 transition-transform ${menu ? "rotate-180" : ""}`} />
             </button>
             {menu && (
               <div className="absolute left-1/2 top-full w-80 -translate-x-1/2 pt-2">
-                <div className="rounded-sm border bg-popover p-4 shadow-xl">
+                <div className="rounded-2xl border bg-popover/95 p-3 shadow-elegant backdrop-blur-xl animate-in fade-in zoom-in-95 duration-200">
                   <ServiceList onNavigate={close} />
-                  <Link to="/services" onClick={close} className="mt-3 block border-t pt-3 text-sm font-semibold text-navy-soft hover:underline">
+                  <Link to="/services" onClick={close} className="mt-2 block border-t px-3 pt-3 pb-1 text-sm font-semibold text-navy-soft hover:underline">
                     See all services
                   </Link>
                 </div>
@@ -94,22 +86,22 @@ export function Header() {
             )}
           </div>
           {NAV.map((n) => (
-            <Link key={n.to} to={n.to} className="rounded-md px-3 py-2 text-sm font-medium hover:bg-muted" activeProps={{ className: "text-navy-soft" }}>
+            <Link key={n.to} to={n.to} className="rounded-full px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary hover:text-navy-soft" activeProps={{ className: "text-navy-soft" }}>
               {n.label}
             </Link>
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <Link to="/contact" className="hidden rounded-sm bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-transform hover:-translate-y-0.5 sm:inline-flex">
+          <Link to="/contact" className="hidden rounded-full bg-navy px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-violet sm:inline-flex">
             Contact us
           </Link>
-          <button type="button" className="rounded-md p-2 lg:hidden" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen((v) => !v)}>
+          <button type="button" className="rounded-full p-2 transition-colors hover:bg-secondary lg:hidden" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen((v) => !v)}>
             {open ? <X /> : <Menu />}
           </button>
         </div>
       </div>
       {open && (
-        <div className="max-h-[calc(100vh-4.5rem)] overflow-y-auto border-t bg-background px-5 pb-8 pt-4 lg:hidden">
+        <div className="max-h-[calc(100vh-4.5rem)] overflow-y-auto border-t bg-background px-5 pb-8 pt-4 animate-in fade-in slide-in-from-top-2 duration-200 lg:hidden">
           <Link to="/" onClick={close} className="block py-2 text-lg font-semibold">Home</Link>
           <div className="my-4">
             <ServiceList onNavigate={close} />
@@ -119,7 +111,7 @@ export function Header() {
               {n.label}
             </Link>
           ))}
-          <Link to="/contact" onClick={close} className="mt-4 flex justify-center rounded-sm bg-accent px-5 py-3 font-semibold text-accent-foreground">
+          <Link to="/contact" onClick={close} className="mt-4 flex justify-center rounded-full bg-navy px-5 py-3 font-semibold text-primary-foreground">
             Contact us
           </Link>
         </div>
@@ -130,8 +122,9 @@ export function Header() {
 
 export function Footer() {
   return (
-    <footer className="bg-navy-deep text-on-navy">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+    <footer className="on-dark relative overflow-hidden bg-navy-deep text-on-navy">
+      <div className="bg-aurora pointer-events-none absolute inset-0 opacity-40" aria-hidden />
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-20 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div>
           <Logo light />
           <p className="mt-4 max-w-xs text-sm text-on-navy-muted">
@@ -164,7 +157,7 @@ export function Footer() {
           </nav>
         </div>
       </div>
-      <div className="border-t border-on-navy/10 py-6 text-center text-xs text-on-navy-muted">
+      <div className="relative border-t border-on-navy/10 py-6 text-center text-xs text-on-navy-muted">
         © {new Date().getFullYear()} Nedd Digital. All rights reserved.
       </div>
     </footer>

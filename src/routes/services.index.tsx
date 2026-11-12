@@ -26,7 +26,7 @@ function Page() {
           <h2 className="max-w-2xl text-3xl font-semibold text-navy md:text-4xl">Everything we can help you with.</h2>
           <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((s) => (
-              <Link key={s.slug} to="/services/$slug" params={{ slug: s.slug }} className="rounded-2xl border bg-card p-6 transition-shadow hover:shadow-lg">
+              <Link key={s.slug} to="/services/$slug" params={{ slug: s.slug }} className="group rounded-2xl border bg-card p-6 transition-all duration-500 hover:-translate-y-1 hover:border-lavender hover:shadow-elegant">
                 <h3 className="text-lg font-semibold text-navy">{s.name}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{s.short}</p>
               </Link>

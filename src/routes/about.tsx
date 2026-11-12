@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { PageHero, CtaBand, Eyebrow, ProcessSteps, PrimaryLink } from "@/components/site/Blocks";
 import { Reveal } from "@/components/site/Reveal";
+import { Ambient } from "@/components/site/Ambient";
 import { CONTACT, SERVICES } from "@/lib/site";
 
 export const Route = createFileRoute("/about")({
@@ -90,12 +91,13 @@ function Page() {
         </div>
       </section>
 
-      <section className="bg-navy text-on-navy">
-        <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+      <section className="on-dark relative overflow-hidden bg-navy-deep text-on-navy">
+        <Ambient trails={false} />
+        <div className="relative mx-auto max-w-7xl px-5 py-20 lg:px-8">
           <Eyebrow light>How we approach projects</Eyebrow>
           <div className="mt-6 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {PRINCIPLES.map((p) => (
-              <div key={p.title}>
+              <div key={p.title} className="rounded-2xl border border-on-navy/10 bg-on-navy/5 p-6 backdrop-blur-sm transition-colors duration-300 hover:border-lavender/50">
                 <h3 className="text-lg font-semibold">{p.title}</h3>
                 <p className="mt-2 text-sm text-on-navy-muted">{p.body}</p>
               </div>

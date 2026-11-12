@@ -36,13 +36,13 @@ function ServicePage() {
         <PrimaryLink to="/contact">{s.cta}</PrimaryLink>
       </PageHero>
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
-        {s.slug === "power-bi-data-analytics" && <Link to="/portfolio" search={{ item: "data-analysis-dashboard" }} aria-label="View data analysis dashboard in portfolio"><img src={analyticsDashboard.url} alt="Product sales and market share data analysis dashboard" className="mb-12 w-full rounded-sm border" /></Link>}
+        {s.slug === "power-bi-data-analytics" && <Link to="/portfolio" search={{ item: "data-analysis-dashboard" }} aria-label="View data analysis dashboard in portfolio"><img src={analyticsDashboard.url} alt="Product sales and market share data analysis dashboard" className="mb-12 w-full rounded-2xl border shadow-elegant" /></Link>}
         <h2 className="text-3xl font-semibold text-navy">{s.problemTitle}</h2>
         <ul className="mt-6 list-disc space-y-3 pl-5 text-muted-foreground">{s.problems.map((p) => <li key={p}>{p}</li>)}</ul>
         <p className="mt-8 max-w-3xl text-lg">{s.solution}</p>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {s.offerings.map((o) => (
-            <div key={o.title} className="rounded-2xl border bg-card p-6">
+            <div key={o.title} className="rounded-2xl border bg-card p-6 transition-all duration-500 hover:-translate-y-1 hover:border-lavender hover:shadow-elegant">
               <h3 className="text-lg font-semibold text-navy">{o.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{o.body}</p>
             </div>
