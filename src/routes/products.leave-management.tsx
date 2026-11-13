@@ -1,7 +1,7 @@
 import { LEAVE_FEATURES } from "@/lib/site";
 const leaveDashboard = { url: "/images/leave-management-demo.jpg" };
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHero, CtaBand, PrimaryLink } from "@/components/site/Blocks";
+import { PageHero, CtaBand, PrimaryLink, CallLink } from "@/components/site/Blocks";
 
 export const Route = createFileRoute("/products/leave-management")({
   head: () => ({
@@ -31,7 +31,7 @@ function Page() {
             </div>
           ))}
         </div>
-        <div className="mt-10"><PrimaryLink to="/contact">Enquire about Leave Management Software</PrimaryLink></div>
+        <div className="mt-10 flex flex-wrap gap-3"><PrimaryLink to="/contact">Enquire about Leave Management Software</PrimaryLink><CallLink light={false} /></div>
       </section>
       <CtaBand title="Let's talk about your business" body="Tell us what you need and we'll reply with clear next steps." cta="Contact us" />
     </>

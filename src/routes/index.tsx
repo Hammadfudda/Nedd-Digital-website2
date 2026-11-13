@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, BarChart3, Check, HeartHandshake, Layers3, ShieldCheck } from "lucide-react";
 import { Ambient } from "@/components/site/Ambient";
-import { CtaBand, Eyebrow, GhostLink, PrimaryLink, ProcessSteps } from "@/components/site/Blocks";
+import { CtaBand, Eyebrow, GhostLink, CallLink, PrimaryLink, ProcessSteps } from "@/components/site/Blocks";
 const analyticsDashboard = { url: "/images/data-analysis-dashboard.png" };
 const leaveDashboard = { url: "/images/leave-management-demo.jpg" };
 const heroMp4 = { url: "/images/nedd-hero.mp4" };
@@ -80,6 +80,7 @@ function Index() {
             <div className="hero-rise mt-9 flex flex-wrap gap-3" style={{ ["--i" as string]: 3 }}>
               <PrimaryLink to="/contact">Book a free consultation</PrimaryLink>
               <GhostLink to="/services">Explore services</GhostLink>
+              <CallLink />
             </div>
           </div>
           <div className="hero-rise relative hidden min-h-[560px] lg:col-span-5 lg:block" style={{ ["--i" as string]: 4 }}>

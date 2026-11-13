@@ -12,7 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { Header, Footer } from "@/components/site/Layout";
+import { Header, Footer, FloatingCall } from "@/components/site/Layout";
 import { Intro, INTRO_BOOT_SCRIPT } from "@/components/site/Intro";
 
 function NotFoundComponent() {
@@ -133,6 +133,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <Footer />
+        <FloatingCall />
       </div>
     </QueryClientProvider>
   );

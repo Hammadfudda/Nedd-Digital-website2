@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
+import { CONTACT } from "@/lib/site";
 import type { ReactNode } from "react";
 import { Reveal } from "./Reveal";
 import { Ambient } from "./Ambient";
@@ -22,7 +23,7 @@ export function PageHero({ eyebrow, title, lead, children }: { eyebrow: string; 
           <div className="hero-rise" style={{ ["--i" as string]: 0 }}><Eyebrow light>{eyebrow}</Eyebrow></div>
           <h1 className="hero-rise text-5xl font-medium leading-[0.98] md:text-7xl lg:text-8xl" style={{ ["--i" as string]: 1 }}>{title}</h1>
           <p className="hero-rise mt-7 max-w-2xl text-base leading-7 text-on-navy-muted md:text-lg" style={{ ["--i" as string]: 2 }}>{lead}</p>
-          {children && <div className="hero-rise mt-9 flex flex-wrap gap-3" style={{ ["--i" as string]: 3 }}>{children}</div>}
+          <div className="hero-rise mt-9 flex flex-wrap gap-3" style={{ ["--i" as string]: 3 }}>{children}<CallLink /></div>
         </div>
       </div>
     </section>
@@ -39,6 +40,18 @@ export function PrimaryLink({ to, children, params }: { to: string; children: Re
       {children}
       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
     </Link>
+  );
+}
+
+export function CallLink({ light = true }: { light?: boolean }) {
+  return (
+    <a
+      href={CONTACT.phoneHref}
+      className={`inline-flex min-h-12 items-center gap-2 rounded-full border px-6 py-3 text-sm font-semibold backdrop-blur-sm transition-colors duration-300 ${light ? "border-on-navy/30 bg-on-navy/5 text-on-navy hover:bg-on-navy/15" : "border-navy/20 text-navy hover:border-violet hover:bg-secondary"}`}
+    >
+      <Phone className="h-4 w-4" />
+      {CONTACT.phone}
+    </a>
   );
 }
 
@@ -84,7 +97,10 @@ export function CtaBand({ title, body, cta, to = "/contact" }: { title: string; 
             <h2 className="text-4xl font-medium md:text-6xl">{title}</h2>
             <p className="mt-3 text-on-navy-muted">{body}</p>
           </div>
-          <PrimaryLink to={to}>{cta}</PrimaryLink>
+          <div className="flex flex-wrap gap-3">
+            <PrimaryLink to={to}>{cta}</PrimaryLink>
+            <CallLink />
+          </div>
         </div>
       </div>
     </section>

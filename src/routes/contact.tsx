@@ -6,7 +6,7 @@ import { PageHero, Eyebrow } from "@/components/site/Blocks";
 import { CONTACT, SERVICES } from "@/lib/site";
 import { backendReady, submitEnquiry } from "@/lib/contact-submit";
 
-const DESC = "Contact Nedd Digital about bookkeeping, Power BI and Tableau dashboards, websites, software, apps or branding. Call +1 (281) 547-9290.";
+const DESC = "Contact Nedd Digital about bookkeeping, Power BI and Tableau dashboards, websites, software, apps or branding. Call +1 (551) 325-7607.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

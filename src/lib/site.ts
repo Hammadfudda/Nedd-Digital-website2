@@ -1,7 +1,7 @@
 export const CONTACT = {
   company: "Nedd Digital",
-  phone: "+1 (281) 547-9290",
-  phoneHref: "tel:+12815479290",
+  phone: "+1 (551) 325-7607",
+  phoneHref: "tel:+15513257607",
   email: "info@nedddigital.com",
   address: "111 Town Square Place, Jersey City, NJ",
 };
