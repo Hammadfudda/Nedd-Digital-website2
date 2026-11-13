@@ -57,12 +57,6 @@ export function Header() {
     <header
       className={`sticky top-0 z-50 border-b transition-all duration-300 ${scrolled ? "border-border/70 bg-background/80 shadow-elegant backdrop-blur-xl" : "border-transparent bg-background"}`}
     >
-      <div className="on-dark bg-navy-deep text-on-navy">
-        <div className="mx-auto flex max-w-7xl items-center justify-center gap-2 px-5 py-1.5 text-xs font-medium sm:justify-end lg:px-8">
-          <span className="text-on-navy-muted">Call us:</span>
-          <a href={CONTACT.phoneHref} className="inline-flex items-center gap-1.5 font-semibold hover:text-accent"><Phone className="h-3.5 w-3.5" />{CONTACT.phone}</a>
-        </div>
-      </div>
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 py-3 lg:px-8">
         <Logo large />
         <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
@@ -98,9 +92,6 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <a href={CONTACT.phoneHref} aria-label={`Call ${CONTACT.phone}`} className="inline-flex items-center gap-2 rounded-full border border-navy/20 px-3 py-2.5 text-sm font-semibold text-navy transition-colors hover:border-violet hover:bg-secondary xl:px-4">
-            <Phone className="h-4 w-4" /><span className="hidden xl:inline">{CONTACT.phone}</span>
-          </a>
           <Link to="/contact" className="hidden rounded-full bg-navy px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-violet sm:inline-flex">
             Contact us
           </Link>
@@ -120,10 +111,7 @@ export function Header() {
               {n.label}
             </Link>
           ))}
-          <a href={CONTACT.phoneHref} className="mt-4 flex items-center justify-center gap-2 rounded-full border border-navy/20 px-5 py-3 font-semibold text-navy">
-            <Phone className="h-4 w-4" />{CONTACT.phone}
-          </a>
-          <Link to="/contact" onClick={close} className="mt-3 flex justify-center rounded-full bg-navy px-5 py-3 font-semibold text-primary-foreground">
+          <Link to="/contact" onClick={close} className="mt-4 flex justify-center rounded-full bg-navy px-5 py-3 font-semibold text-primary-foreground">
             Contact us
           </Link>
         </div>
